@@ -22,7 +22,7 @@ namespace Ecomak.Controllers
         {
             this.quotesService = _quotesService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Quote>>> GetQuotes()
         {
@@ -39,7 +39,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "something bad happened");
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Quote>> GetQuoteAsync(int id)
         {
@@ -68,7 +68,7 @@ namespace Ecomak.Controllers
             var createQuote = await quotesService.CreateQuote(quote);
             return Created($"/api/Quotes/{createQuote.Id}", createQuote);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeleteQuote(int Id)
         {
@@ -85,7 +85,7 @@ namespace Ecomak.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Quote>> PutQuote(int id, [FromBody]Quote Quote)
         {

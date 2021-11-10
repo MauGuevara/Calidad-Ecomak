@@ -75,7 +75,7 @@ namespace Ecomak.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut("{Id}")]
         public async Task<ActionResult<Tr>> UpdateTr(int id, int categoryId, [FromBody]Tr Tr)
         {
@@ -92,7 +92,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Tr>> PostTr(int categoryId, [FromBody] Tr tr)
         {
@@ -104,7 +104,7 @@ namespace Ecomak.Controllers
             var postedTr = await this.trsService.CreateTr(categoryId, tr);
             return Created($"/api/categoriesTr/{categoryId}/trs/{postedTr.IdTr}", postedTr);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeleteTr(int id, int categoryId)
         {

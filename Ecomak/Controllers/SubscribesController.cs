@@ -20,7 +20,7 @@ namespace Ecomak.Controllers
         {
             this.SubscribesService = SubscribesService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Subscribe>>> GetSubscribes(string orderBy = "id")
         {
@@ -38,7 +38,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, "something bad happened");
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("{id}")]
         public async Task<ActionResult<Subscribe>> GetSubscribeAsync(int id)
         {
@@ -71,7 +71,7 @@ namespace Ecomak.Controllers
             return Created($"/api/Subscribes/{createdSubscribe.Id}", createdSubscribe);
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeleteSubscribe(int Id)
         {
@@ -88,7 +88,7 @@ namespace Ecomak.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Subscribe>> PutSubscribe(int id, [FromBody]Subscribe Subscribe)
         {

@@ -21,7 +21,7 @@ namespace Ecomak.Controllers
         {
             this.userService = userService;
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet("ValidateToken")]
         public IActionResult ValidateToken()
         {

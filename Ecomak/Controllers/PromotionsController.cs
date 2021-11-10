@@ -60,7 +60,7 @@ namespace Ecomak.Controllers
             }
 
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Promotion>> PostPromotion([FromBody] Promotion promotion)
         {
@@ -72,7 +72,7 @@ namespace Ecomak.Controllers
             var createdPromotion = await promotionsService.CreatePromotionAsync(promotion);
             return Created($"/api/promotions/{createdPromotion.id}", createdPromotion);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeletePromotion(int id)
         {
@@ -89,7 +89,7 @@ namespace Ecomak.Controllers
                 return this.StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Promotion>> PutPromotion(int id, [FromBody]Promotion promotion)
         {

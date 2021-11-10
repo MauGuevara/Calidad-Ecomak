@@ -96,7 +96,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id:int}")]
         public async Task<ActionResult<Commentary>> PutCommentary(int promotionId, int id, [FromBody] Commentary commentary)
         {
@@ -118,7 +118,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeleteCommentary(int promotionId, int id)
         {

@@ -74,7 +74,7 @@ namespace Ecomak.Controllers
             }
         }
 
-        [Authorize]
+        //[Authorize]
         [HttpPut("{Id}")]
         public async Task<ActionResult<Product>> UpdateProduct(int id, int categoryId, [FromBody]Product Product)
         {
@@ -91,7 +91,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Product>> PostProduct(int categoryId, [FromBody] Product product)
         {
@@ -103,7 +103,7 @@ namespace Ecomak.Controllers
             var postedProduct = await this.productsService.CreateProduct(categoryId, product);
             return Created($"/api/categories/{categoryId}/products/{postedProduct.Id}", postedProduct);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{Id:int}")]
         public async Task<ActionResult<bool>> DeleteProduct(int id, int categoryId)
         {

@@ -75,7 +75,7 @@ namespace Ecomak.Controllers
 
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPut("{id}")]
         public async Task<ActionResult<Category>> UpdateCategory(int id, [FromBody]Category Category)
         {
@@ -93,7 +93,7 @@ namespace Ecomak.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory([FromBody] Category category)
         {
@@ -105,7 +105,7 @@ namespace Ecomak.Controllers
             var postedCategory = await this.categoriesService.AddCategoryAsync(category);
             return Created($"/api/categories/{postedCategory.Id}", postedCategory);
         }
-        [Authorize]
+        //[Authorize]
         [HttpDelete("{id:int}")]
         public async Task<ActionResult<bool>> DeleteCategory(int id)
         {
